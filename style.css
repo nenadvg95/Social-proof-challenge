@@ -1,0 +1,251 @@
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+
+  :root{
+    --ff-deffault:'League Spartan',sans-serif;
+  
+    --clr-dark-magenta:hsl(300, 43%, 22%);
+    --clr-soft-pink:hsl(333, 80%, 67%);
+  
+    --clr-dark-greyish-magenta:hsl(303, 10%, 53%);
+    --clr-light-grayish-magenta:hsl(300, 24%, 96%);
+    --clr-white:hsl(0,0,100%);
+  
+    --fs-300: 1rem;
+    --fs-400:1.125rem;
+    --fs-500:1.25rem;
+    --fs-600:1.5rem;
+    --fs-700:2rem;
+    --fs-800:3rem;
+    --fs-900:4rem;
+  
+    --fw-400:400;
+    --fw-500:500;
+    --fw-700:700;
+  }
+  @media(max-width:375px){
+      :root{
+          --fs-300: .7rem;
+          --fs-400:.9rem;
+          --fs-500:1rem;
+          --fs-600:1.125rem;
+          --fs-700:1.25rem;
+          --fs-800:1.5rem;
+          --fs-900:2rem;
+      }
+  }
+
+  /* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+    font-family: var(--ff-deffault);
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* MY CSS */
+
+body{
+    display: grid;
+    place-content: center;
+    padding:2rem;
+
+    font-size: var(--fs-400);
+    font-weight: var(--fw-500);
+    color: var(--clr-dark-greyish-magenta);
+    background: url(images/bg-pattern-top-desktop.svg) no-repeat top left,
+                url(images/bg-pattern-bottom-desktop.svg)no-repeat bottom right;
+    background-size: max(35%,500px),max(75%,300px);
+}
+.container{
+    max-width: 100%;
+}
+
+.title-section{
+    text-align: center;
+    display: grid;   
+    color: var(--clr-dark-greyish-magenta);
+    gap:2rem;
+    font-weight: var(--fw-500);
+}
+
+.title-text{
+    max-width: 25rem;
+    margin: 0 auto;
+}
+
+.title{
+    font-size: var(--fs-900);
+    font-weight: var(--fw-700);
+    line-height: 1;
+    color: var(--clr-dark-magenta);
+    max-width: 13ch;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.product-ratings{
+    max-width: 30rem;
+    font-size: var(--fs-300);
+    font-weight: var(--fw-700);
+    margin: 3rem auto;
+}
+.product-ratings li span{
+    color: orange;
+}
+
+.product-ratings li{
+    display: flex;
+    flex-direction: column;
+    color: var(--clr-dark-magenta);
+    background-color: var(--clr-light-grayish-magenta);
+    border-radius: .5rem;
+    padding: .8rem 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.reviews-section img{
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.reviews-section li{
+    background-color: var(--clr-dark-magenta);
+    border-radius: .5rem;
+    padding:3rem;
+    color: white;
+    font-size: var(--fs-300);
+    font-weight: var(--fw-300);
+    max-width: 28rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+.flex-flow{
+    font-size: var(--fs-400);
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.status{
+    color: var(--clr-soft-pink);
+    font-weight: var(--fw-500);
+}
+
+@media(min-width:60rem){
+    .title{
+        margin:0 0 2rem 0;
+    }
+    .title-section{
+        grid-template-columns: 1fr 1.5fr;
+        text-align: start;
+        margin-bottom: 5rem;
+    }
+    .title-text{
+        margin: 0;
+    }
+
+    .product-ratings li{
+        flex-direction: row;
+        gap: 1rem;
+        margin: 0;
+        margin-bottom: 1.5rem;
+    }
+    .product-ratings li:nth-child(1){
+        transform: translateX(-3rem) ;
+    }
+    .product-ratings li:nth-child(3){
+        transform: translateX(3rem) ;
+    }
+    .reviews-section{
+        display: flex;
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .reviews-section li:nth-child(2){
+        transform: translateY(2rem);
+    }
+    .reviews-section li:nth-child(3){
+        transform: translateY(3rem);        
+    }
+}
+
